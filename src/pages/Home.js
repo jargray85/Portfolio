@@ -19,7 +19,7 @@ function Home(props) {
     return projects.map((project) => (
       <div key={project.id}>
         <h1>{project.name}</h1>
-        <img src={project.image} alt={project.name} />
+        <img src={`${props.URL}${project.image}`} alt={project.name} crossOrigin="anonymous" />
         <a href={project.git}>
           <button>Github</button>
         </a>
