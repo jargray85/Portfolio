@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Projects from "../pages/Projects";
 
+
 function Home(props) {
   // State and effect for getting projects data
   const [projects, setProjects] = useState(null);
@@ -18,7 +19,7 @@ function Home(props) {
   const loaded = () => {
     return projects.map((project) => (
       <div key={project.id} className="project">
-        <h2>{project.name}</h2>
+        <h3>{project.name}</h3>
         <img src={`${props.URL}${project.image}`} alt={project.name} crossOrigin="anonymous" />
         <a href={project.git} className="project-link">
           <button>Github</button>
@@ -33,6 +34,8 @@ function Home(props) {
   return (
     <div>
       <h1>James Gray</h1>
+      <img src="/profile-image.jpg" alt="Profile" className="profile-image" />
+      <h2>Projects</h2>
       <div className="projects-container">{projects ? loaded() : <h1>Loading...</h1>}</div>
     </div>
   );
