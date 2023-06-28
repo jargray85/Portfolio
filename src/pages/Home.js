@@ -18,11 +18,11 @@ function Home(props) {
     const data = await response.json()
     setAboutData(data)
   } 
-  
+
   useEffect(() => {
     getProjectsData()
     getAboutData()
-  }, [])
+  }, [getProjectsData, getAboutData])
 
   const loaded = () => {
     return projects.map((project) => (
