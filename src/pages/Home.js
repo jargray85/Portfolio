@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import Projects from "../pages/Projects"
 
 
 
