@@ -7,22 +7,22 @@ function Home(props) {
   const [projects, setProjects] = useState(null)
   const [aboutData, setAboutData] = useState(null)
 
-  const getProjectsData = async () => {
-    const response = await fetch(props.URL + "projects")
-    const data = await response.json()
-    setProjects(data)
-  }
-
-  const getAboutData = async () => {
-    const response = await fetch(props.URL + "about")
-    const data = await response.json()
-    setAboutData(data)
-  } 
-
   useEffect(() => {
-    getProjectsData()
-    getAboutData()
-  }, [getProjectsData, getAboutData])
+    const getProjectsData = async () => {
+        const response = await fetch(props.URL + "projects")
+        const data = await response.json()
+        setProjects(data)
+      }
+    
+      const getAboutData = async () => {
+        const response = await fetch(props.URL + "about")
+        const data = await response.json()
+        setAboutData(data)
+      }
+
+      getProjectsData()
+      getAboutData()
+    }, [])
 
   const loaded = () => {
     return projects.map((project) => (
