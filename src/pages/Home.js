@@ -39,13 +39,14 @@ function Home(props) {
         </a>
         </div>
       </div>
-    ));
-  };
+    ))
+  }
 
   return (
     <div>
       <h1>James Gray</h1>
       <img src="/profile-image.jpg" alt="Profile" className="profile-image" />
+      <hr className="page-separator" />
       <section id="about">
       <h2>About</h2>
       {aboutData ? (
@@ -65,6 +66,7 @@ function Home(props) {
         <h1>Loading...</h1>
       )}
       </section>
+      <hr className="page-separator" />
       <section id="projects">
       <h2>Projects</h2>
       <div className="projects-container-wrapper">
@@ -72,7 +74,7 @@ function Home(props) {
       </div> 
       </section> 
     </div>
-  );
+  )
 }
 
 export default Home;

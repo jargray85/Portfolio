@@ -30,9 +30,16 @@ h3 {
   border-radius: 10px;
 }
 
+.page-separator {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 3.5em;
+}
+
 .projects-container-wrapper {
   margin: 0 auto; 
   max-width: 1200px; 
+  margin-bottom: 3em;
 }
 
 .projects-container {
@@ -95,6 +102,11 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+.about-contact a {
+  text-decoration: none;
+  color: lightgray;
+}
+
 p {
   text-align: center;
   color: lightgray;
@@ -107,7 +119,8 @@ p {
 
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
 }
 
@@ -116,5 +129,28 @@ p {
   border: none;
   color: white;
   cursor: pointer;
-  margin-right: 20px;
+}
+
+.github-link {
+  text-decoration: none;
+  color: white;
+}
+
+.marquee-container {
+  display: flex;
+  align-items: center;
+}
+
+.marquee-text {
+  animation: marquee 10s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

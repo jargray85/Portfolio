@@ -20,7 +20,7 @@ function App() {
       <Route path="/" element={<Home URL={URL}/>}/>
       </Routes>
     </div>
-  );
+  )
 }
 
 export default App
