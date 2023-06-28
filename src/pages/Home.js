@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import Projects from "../pages/Projects";
+import { useState, useEffect } from "react"
+import Projects from "../pages/Projects"
+
 
 
 function Home(props) {
@@ -45,6 +46,7 @@ function Home(props) {
     <div>
       <h1>James Gray</h1>
       <img src="/profile-image.jpg" alt="Profile" className="profile-image" />
+      <section id="about">
       <h2>About</h2>
       {aboutData ? (
         <div className="about-section">
@@ -62,10 +64,13 @@ function Home(props) {
       ) : (
         <h1>Loading...</h1>
       )}
+      </section>
+      <section id="projects">
       <h2>Projects</h2>
       <div className="projects-container-wrapper">
         <div className="projects-container">{projects ? loaded() : <h1>Loading...</h1>}</div>
-      </div>  
+      </div> 
+      </section> 
     </div>
   );
 }

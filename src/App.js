@@ -6,6 +6,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 // IMPORT PAGES
 import Home from "./pages/Home";
+import Header from "./components/Header"
 // import About from "./pages/About";
 import Projects from "./pages/Projects";
 
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Routes>
       <Route path="/" element={<Home URL={URL}/>}/>
       </Routes>

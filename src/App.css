@@ -100,3 +100,21 @@ p {
   color: lightgray;
   margin-bottom: 1rem;
 }
+
+.header {
+  background-color: gray;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
