@@ -22,7 +22,7 @@ function Home(props) {
 
       getProjectsData()
       getAboutData()
-    }, [])
+    }, [props.URL])
 
   const loaded = () => {
     return projects.map((project) => (
