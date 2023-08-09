@@ -6,23 +6,31 @@ function Home(props) {
   // State and effect for getting projects data
   const [projects, setProjects] = useState(null)
   const [aboutData, setAboutData] = useState(null)
+  const [experienceData, setExperienceData] = useState(null)
 
   useEffect(() => {
     const getProjectsData = async () => {
-        const response = await fetch(props.URL + "projects")
-        const data = await response.json()
-        setProjects(data)
-      }
+      const response = await fetch(`${props.URL}/projects`)
+      const data = await response.json()
+      setProjects(data)
+    }
     
-      const getAboutData = async () => {
-        const response = await fetch(props.URL + "about")
-        const data = await response.json()
-        setAboutData(data)
-      }
+    const getAboutData = async () => {
+      const response = await fetch(`${props.URL}/about`)
+      const data = await response.json()
+      setAboutData(data)
+    }
 
-      getProjectsData()
-      getAboutData()
-    }, [props.URL])
+    const getExperienceData = async () => {
+      const response = await fetch(`${props.URL}/experience`)
+      const data = await response.json()
+      setExperienceData(data)
+    }
+
+    getProjectsData()
+    getAboutData()
+    getExperienceData()
+  }, [props.URL])
 
   const loaded = () => {
     return projects.map((project) => (
@@ -37,6 +45,24 @@ function Home(props) {
           <button className="project-button">Live Site</button>
         </a>
         </div>
+      </div>
+    ))
+  }
+
+  const loadedExperience = () => {
+    return experienceData.map((exp) => (
+      <div key={`${exp.position}-${exp.date}`} className="experience-entry">
+        <h4>{exp.position}</h4>
+        <p>{exp.date}</p>
+        <p>{exp.description}</p>
+        <h5>Job Duties</h5>
+        <ul>
+          {Array.isArray(exp.jobDuties)
+            ? exp.jobDuties.map((duty, dutyIndex) => (
+                <li key={dutyIndex}>{duty}</li>
+              ))
+            : null}
+        </ul>
       </div>
     ))
   }
@@ -72,6 +98,19 @@ function Home(props) {
         <div className="projects-container">{projects ? loaded() : <h1>Loading...</h1>}</div>
       </div> 
       </section> 
+
+      <hr className="page-separator" />
+
+      <section id="experience">
+        <h2>Work Experience</h2>
+        <div className="resume-section">
+          {experienceData ? (
+            loadedExperience()
+          ) : (
+            <h1>Loading experience data...</h1>
+          )}
+        </div>
+      </section>
     </div>
   )
 }
