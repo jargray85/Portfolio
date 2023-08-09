@@ -56,13 +56,17 @@ function Home(props) {
         <p>{exp.date}</p>
         <p>{exp.description}</p>
         <h5>Job Duties</h5>
+        {Array.isArray(exp.jobDuties) ? (
         <ul>
-          {Array.isArray(exp.jobDuties)
-            ? exp.jobDuties.map((duty, dutyIndex) => (
-                <li key={dutyIndex}>{duty}</li>
-              ))
-            : null}
+          {exp.jobDuties.map((duty, dutyIndex) => (
+            <li key={dutyIndex}>{duty}</li>
+          ))}
         </ul>
+      ) : (
+        <ul>
+          <li>{exp.jobDuties}</li>
+        </ul>
+      )}
       </div>
     ))
   }
