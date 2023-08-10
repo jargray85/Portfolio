@@ -8,7 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 
 function App() {
-  // URL should have YOUR HEROKU URL for your backend, make sure you include the trailing slash
+  // URL should have HEROKU URL for your backend, or localhost:4000 for development
   const URL = "http://localhost:4000"
 
   return (
