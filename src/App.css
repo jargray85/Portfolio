@@ -184,3 +184,35 @@ p {
     transform: translateX(-50%);
   }
 }
+
+/* Footer */
+.footer {
+  background-color: gray;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em
+}
+
+.footer-text {
+  flex-grow: 1; 
+  text-align: center; 
+}
+
+.back-to-top-button {
+  background-color: #007bff;
+  color: antiquewhite;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.back-to-top-button:hover {
+  background-color: #0056b3;
+}
