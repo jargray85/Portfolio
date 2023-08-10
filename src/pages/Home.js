@@ -7,6 +7,7 @@ function Home(props) {
   const [projects, setProjects] = useState(null)
   const [aboutData, setAboutData] = useState(null)
   const [experienceData, setExperienceData] = useState(null)
+  const [expandedIndex, setExpandedIndex] = useState(null)
 
   useEffect(() => {
     const getProjectsData = async () => {
@@ -32,6 +33,10 @@ function Home(props) {
     getExperienceData()
   }, [props.URL])
 
+  const toggleJobDuties = (index) => {
+    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
+  }
+
   const loaded = () => {
     return projects.map((project) => (
       <div key={project.id} className="project">
@@ -50,23 +55,25 @@ function Home(props) {
   }
 
   const loadedExperience = () => {
-    return experienceData.map((exp) => (
-      <div key={`${exp.position}-${exp.date}`} className="experience-entry">
+    return experienceData.map((exp, index) => (
+      <div key={index} className="experience-entry">
         <h4>{exp.position}</h4>
         <p>{exp.date}</p>
         <p>{exp.description}</p>
-        <h5>Job Duties</h5>
-        {Array.isArray(exp.jobDuties) ? (
-        <ul>
-          {exp.jobDuties.map((duty, dutyIndex) => (
-            <li key={dutyIndex}>{duty}</li>
-          ))}
+        <h5>
+          <button className="job-duties-toggle" onClick={() => toggleJobDuties(index)}>
+            Job Duties
+          </button>
+        </h5>
+        <ul className={`job-duties-list ${expandedIndex === index ? "visible" : ""}`}>
+          {Array.isArray(exp.jobDuties) ? (
+            exp.jobDuties.map((duty, dutyIndex) => (
+              <li key={dutyIndex}>{duty}</li>
+            ))
+          ) : (
+            <li>{exp.jobDuties}</li>
+          )}
         </ul>
-      ) : (
-        <ul>
-          <li>{exp.jobDuties}</li>
-        </ul>
-      )}
       </div>
     ))
   }

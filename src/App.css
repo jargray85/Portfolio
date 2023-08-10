@@ -133,6 +133,16 @@ p {
   margin-right: 3em;
 }
 
+.job-duties-list {
+  display: none;
+}
+
+.job-duties-list.visible {
+  display: block;
+  list-style-type: disc;
+  padding-left: 2em;
+}
+
 .header {
   background-color: gray;
 }
