@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 
 function App() {
   // URL should have HEROKU URL for your backend, or localhost:4000 for development
-  const URL = "http://localhost:4000"
+  const URL = "https://james-gray-portfolio-e06bd198346a.herokuapp.com/"
 
   return (
     <div className="App">
