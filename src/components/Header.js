@@ -18,9 +18,6 @@ function Header() {
           <p className="marquee-text">Welcome to James' portfolio!</p>
         </div>
         <div className="nav-links">
-          <button onClick={() => scrollToSection("about")} className="nav-link" style={{ textDecoration: "none" }}>
-            About
-          </button>
           <button onClick={() => scrollToSection("projects")} className="nav-link" style={{ textDecoration: "none" }}>
             Projects
           </button>

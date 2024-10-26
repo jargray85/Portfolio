@@ -81,21 +81,18 @@ function Home(props) {
   return (
     <div>
       <h1>James Gray</h1>
-      <img src="/profile-image.jpg" alt="Profile" className="profile-image" />
-      <hr className="page-separator" />
       <section id="about">
-      <h2>About</h2>
       {aboutData ? (
         <div className="about-section">
-          <p className="about-bio">
-            {aboutData.bio}
+          <p className="about-contact">
+            <strong>Email:</strong> {aboutData.email}
           </p>
           <p className="about-contact">
             <strong>LinkedIn:</strong>{" "}
             <a href={aboutData.linkedin}>{aboutData.linkedin}</a>
           </p>
-          <p className="about-contact">
-            <strong>Email:</strong> {aboutData.email}
+          <p className="about-bio">
+            {aboutData.bio}
           </p>
         </div>
       ) : (
