@@ -1,0 +1,33 @@
+[
+    {
+        "position": "Customer Experience | Weekend Health, Inc.",
+        "date": "2022 - Now",
+        "description": "The #2 hire in the Customer Experience department of Weekend Health, and the first shift each day, I take pride in tackling all that Sequence Customer Experience has thrown my way.",
+        "jobDuties": [
+            "Correspond with customers through Zendesk email. Account issues, sign up issues, general questions about the Sequence program and escalations to member Care Coordinators.",
+            "Listen and transcribe voicemails left by insurance companies, pharmacies and customers alike to the corresponding customer account for their Care Team to follow up with.",
+            "Verify identity and scale photos of incoming sign ups through the Sequence app verification process. Reject false or fraudulent submissions."
+        ]
+    },
+
+    {
+        "position": "Technical Writer | Eaze Technologies, Inc.",
+        "date": "2021 - 2022",
+        "description": "Technical writing for Eaze involved researching, creating, publishing, and maintaining informative and instructive articles for both customers and employees.",
+        "jobDuties": "Knowledge base oversight as an author and content manager. Creating both a customer facing help center as well as internal training guidebooks."
+    },
+    
+    {
+        "position": "Quality Improvement Specialist | Eaze Technologies, Inc.",
+        "date": "2018 - 2021",
+        "description": "Quality Improvement at Eaze involved being a Tier 2 Specialist and overseeing much of the day to day of the Tier 1 Customer Service Department.",
+        "jobDuties": "Quality Improvement by managing and coaching Tier 1 agents work as a Tier 2 specialist."
+    },
+
+    {
+        "position": "Customer Experience | Eaze Technologies, Inc.",
+        "date": "2017 - 2018",
+        "description": "Starting at Eaze as a part time Customer Experience Specialist was my entry role at the company. It is where I learned and mastered the core elements of Customer Experience.",
+        "jobDuties": "Frontline customer service via emails and chats using Zendesk and proprietary software."
+    }
+]
