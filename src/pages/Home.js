@@ -1,82 +1,21 @@
 import { useState, useEffect } from "react"
+import Projects from "./Projects"
 
 
 
-function Home(props) {
+function Home() {
   // State and effect for getting projects data
-  const [projects, setProjects] = useState(null)
   const [aboutData, setAboutData] = useState(null)
-  const [experienceData, setExperienceData] = useState(null)
-  const [expandedIndex, setExpandedIndex] = useState(null)
 
   useEffect(() => {
-    const getProjectsData = async () => {
-      const response = await fetch(`${props.URL}/projects`)
-      const data = await response.json()
-      setProjects(data)
-    }
-    
     const getAboutData = async () => {
-      const response = await fetch(`${props.URL}/about`)
+      const response = await fetch('/about.json')
       const data = await response.json()
       setAboutData(data)
     }
 
-    const getExperienceData = async () => {
-      const response = await fetch(`${props.URL}/experience`)
-      const data = await response.json()
-      setExperienceData(data)
-    }
-
-    getProjectsData()
     getAboutData()
-    getExperienceData()
-  }, [props.URL])
-
-  const toggleJobDuties = (index) => {
-    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
-  }
-
-  const loaded = () => {
-    return projects.map((project) => (
-      <div key={project.id} className="project">
-        <h3>{project.name}</h3>
-        <img src={`${props.URL}${project.image}`} alt={project.name} crossOrigin="anonymous" />
-        <div className="project-buttons">
-        <a href={project.git} className="project-link" target="_blank" rel="noopener noreferrer">
-          <button className="project-button">Github</button>
-        </a>
-        <a href={project.live} className="project-link" target="_blank" rel="noopener noreferrer">
-          <button className="project-button">Live Site</button>
-        </a>
-        </div>
-      </div>
-    ))
-  }
-
-  const loadedExperience = () => {
-    return experienceData.map((exp, index) => (
-      <div key={index} className="experience-entry">
-        <h4>{exp.position}</h4>
-        <p>{exp.date}</p>
-        <p>{exp.description}</p>
-        <h5>
-          <button className="job-duties-toggle" onClick={() => toggleJobDuties(index)}>
-            Job Duties
-          </button>
-        </h5>
-        <ul className={`job-duties-list ${expandedIndex === index ? "visible" : ""}`}>
-          {Array.isArray(exp.jobDuties) ? (
-            exp.jobDuties.map((duty, dutyIndex) => (
-              <li key={dutyIndex}>{duty}</li>
-            ))
-          ) : (
-            <li>{exp.jobDuties}</li>
-          )}
-        </ul>
-      </div>
-    ))
-  }
+  }, [])
 
   return (
     <div>
@@ -99,25 +38,54 @@ function Home(props) {
         <h1>Loading...</h1>
       )}
       </section>
+
       <hr className="page-separator" />
+
       <section id="projects">
       <h2>Projects</h2>
       <div className="projects-container-wrapper">
-        <div className="projects-container">{projects ? loaded() : <h1>Loading...</h1>}</div>
+        <div className="projects-container">
+          <Projects />
+        </div>
       </div> 
       </section> 
 
       <hr className="page-separator" />
 
-      <section id="experience">
-        <h2>Work Experience</h2>
-        <div className="resume-section">
-          {experienceData ? (
-            loadedExperience()
-          ) : (
-            <h1>Loading experience data...</h1>
-          )}
+      <section id="resume">
+        <h2>Resumé</h2>
+        <div className="resume-container">
+          <div 
+            className="resume-preview-wrapper"
+            onClick={() => {
+              console.log('Preview clicked');
+              document.getElementById('resume-modal').showModal();
+            }}
+          >
+            <div className="resume-preview">
+              <object 
+                data="/resume.pdf" 
+                type="application/pdf"
+                aria-label="Resume Preview"
+              >
+                <p>Click to view full resume</p>
+              </object>
+            </div>
+          </div>
         </div>
+
+        <dialog id="resume-modal" className="resume-modal">
+          <object 
+            data="/resume.pdf" 
+            type="application/pdf"
+            className="resume-full"
+          >
+            <p>Unable to display PDF</p>
+          </object>
+          <button onClick={() => document.getElementById('resume-modal').close()} className="modal-close">
+            Close
+          </button>
+        </dialog>
       </section>
     </div>
   )

@@ -90,6 +90,8 @@ li {
 .project-buttons {
   display: flex;
   justify-content: center;
+  gap: 2em;
+  margin-top: 1em;
 }
 
 .project-button {
@@ -105,6 +107,84 @@ li {
 
 .project-button:hover {
   background-color: #000;
+  color: #fff;
+}
+
+.resume-container {
+  display: flex;
+  justify-content: center;
+  margin: 2em auto;
+  max-width: 300px;
+}
+
+.resume-preview {
+  width: 100%;
+  height: 480px;  
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.resume-preview object {
+  width: 100%;
+  height: 100%; 
+}
+
+.resume-preview:hover {
+  transform: scale(1.02);
+}
+
+.resume-preview-wrapper {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+.resume-preview::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.resume-modal {
+  padding: 0;
+  max-width: 90vw;
+  max-height: 90vh;
+  border: none;
+  border-radius: 8px;
+  background: dimgray;
+}
+
+.resume-modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.resume-full {
+  width: 90vw;
+  height: 85vh;
+  border: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal-close:hover {
+  background: #000;
   color: #fff;
 }
 
@@ -132,16 +212,6 @@ p {
   margin-bottom: 1rem;
   margin-left: 3em;
   margin-right: 3em;
-}
-
-.job-duties-list {
-  display: none;
-}
-
-.job-duties-list.visible {
-  display: block;
-  list-style-type: disc;
-  padding-left: 2em;
 }
 
 .header {
