@@ -15,14 +15,14 @@ function Header() {
           GitHub
         </a>
         <div className="marquee-container">
-          <p className="marquee-text">Welcome to James' portfolio!</p>
+          <p className="header-name">James Gray</p>
         </div>
         <div className="nav-links">
           <button onClick={() => scrollToSection("projects")} className="nav-link" style={{ textDecoration: "none" }}>
             Projects
           </button>
           <button onClick={() => scrollToSection("experience")} className="nav-link" style={{ textDecoration: "none" }}>
-            Experience
+            Resumé
           </button>
         </div>
       </nav>

@@ -8,7 +8,7 @@ function Footer() {
     return (
         <footer className="footer">
         <div className="footer-content">
-            Created with React and Node.js - Deployed with Heroku and Netlify
+            Created with React and Node.js - Deployed with Netlify
             <button onClick={scrollToTop} className="back-to-top-button">
             Back to Top
             </button>

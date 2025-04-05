@@ -19,7 +19,13 @@ function Home() {
 
   return (
     <div>
-      <h1>James Gray</h1>
+      <div className="profile-img-container">
+        <img
+          src="/profile-image.jpg"
+          alt="James Gray"
+          className="profile-image"
+        />
+      </div>
       <section id="about">
       {aboutData ? (
         <div className="about-section">

@@ -41,11 +41,20 @@ li {
   margin-right: 3em;
 }
 
+.profile-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+  margin: 1em 0;
+}
+
 .profile-image {
   display: block;
   margin: 0 auto; 
   max-width: 15%; 
-  height: auto;
+  height: 15em;
   border-radius: 10px;
 }
 
@@ -214,6 +223,7 @@ p {
   margin-right: 3em;
 }
 
+/* Header */
 .header {
   background-color: gray;
 }
@@ -237,23 +247,22 @@ p {
   color: white;
 }
 
-.marquee-container {
-  display: flex;
-  align-items: center;
+.header-name {
+  font-family: 'Courgette', cursive;
+  color: lightgray;
+  font-size: 2em;
+  margin: 0 1em;
+  text-align: center;
+  width: 100%;
 }
 
-.marquee-text {
-  animation: marquee 10s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.header-profile-img {
+  height: 15em;
+  width: 11em;
+  margin-right: 10px;
+  object-fit: cover;
+  vertical-align: middle;
+  margin: 0;
 }
 
 /* Footer */
