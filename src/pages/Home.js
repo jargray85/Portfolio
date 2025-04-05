@@ -37,7 +37,8 @@ function Home() {
             <a href={aboutData.linkedin}>{aboutData.linkedin}</a>
           </p>
           <p className="about-bio">
-            {aboutData.bio}
+            <strong>{aboutData.bioIntro}</strong>
+            {aboutData.bioDetails}
           </p>
         </div>
       ) : (

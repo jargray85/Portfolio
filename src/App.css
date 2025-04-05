@@ -204,6 +204,7 @@ li {
 
 .about-bio {
   margin-bottom: 1rem;
+  white-space: pre-line;
 }
 
 .about-contact {

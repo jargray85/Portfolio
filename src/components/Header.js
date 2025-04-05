@@ -21,7 +21,7 @@ function Header() {
           <button onClick={() => scrollToSection("projects")} className="nav-link" style={{ textDecoration: "none" }}>
             Projects
           </button>
-          <button onClick={() => scrollToSection("experience")} className="nav-link" style={{ textDecoration: "none" }}>
+          <button onClick={() => scrollToSection("resume")} className="nav-link" style={{ textDecoration: "none" }}>
             Resumé
           </button>
         </div>
