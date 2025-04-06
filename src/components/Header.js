@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect, useState }  from "react";
 
 function Header() {
+  // State theme toggle
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
+  
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId)
     if (section) {
@@ -11,9 +21,16 @@ function Header() {
   return (
     <header className="header">
       <nav className="navbar">
-        <a href="https://github.com/jargray85" target="_blank" rel="noopener noreferrer" className="nav-link github-link">
+        <div className="left-controls">
+        <button className="theme-toggle" onClick={toggleTheme}>
+          🌓
+        </button>
+        <button
+          className="nav-link github-link" 
+          onClick={() => window.open("https://github.com/jargray85", "_blank", "noopener,noreferrer")}>
           GitHub
-        </a>
+        </button>
+        </div>
         <div className="marquee-container">
           <p className="header-name">James Gray</p>
         </div>

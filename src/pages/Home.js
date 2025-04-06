@@ -4,7 +4,7 @@ import Projects from "./Projects"
 
 
 function Home() {
-  // State and effect for getting projects data
+  // State and effect for getting about data
   const [aboutData, setAboutData] = useState(null)
 
   useEffect(() => {

@@ -1,32 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+:root {
+  /* Light mode (default) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --accent: #007bff;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --header-bg: rgba(245, 245, 245, 0.95);
+  --button-text: #1a1a1a;
+  --button-bg: #ffffff;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --accent: #3a9fff;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --header-bg: rgba(40, 40, 40, 0.95);
+  --button-text: #ffffff;
+  --button-bg: transparent;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--card-bg);
+  transform: scale(1.1);
+}
+
 body {
-  background-color: dimgray;
+  background-color: var(--bg-primary);
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-primary);
 }
 
 h1 {
   text-align: center;
   font-size: 5em;
   font-family: 'Courgette', cursive;
-  color: lightgray;
   margin-bottom: 0.2em;
 }
 
 h2 {
   text-align: center;
   font-size: 3.5em;
-  color: lightgray;
 }
 
 h3 {
   font-size: 1.5em;
-  color: lightgray;
-}
-
-h4 {
-  text-align: center;
-  font-size: 1.25em;
-  color: lightgray;
 }
 
 h5 {
@@ -58,9 +95,24 @@ li {
   border-radius: 10px;
 }
 
+.about-section {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2em;
+  margin: 2em 3em;
+  backdrop-filter: blur(10px); 
+  border: 1px solid var(--border-color);
+}
+
 .page-separator {
   border: none;
-  border-top: 1px solid #ccc;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color),
+    transparent
+  );
   margin: 3.5em;
 }
 
@@ -71,17 +123,24 @@ li {
 }
 
 .projects-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.1em; 
-  grid-gap: 0.2em;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 2em; 
+  flex-wrap: nowrap;
 }
 
 .project {
   text-align: center;
-  border: 1px solid #000; 
-  padding: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project img {
@@ -104,19 +163,19 @@ li {
 }
 
 .project-button {
-  background-color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  font-size: 1rem;
-  color: #000;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--button-bg);
+  border: 2px solid var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 25px;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .project-button:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  transform: scale(1.05);
 }
 
 .resume-container {
@@ -199,26 +258,22 @@ li {
 
 .about-container {
   text-align: center;
-  color: lightgray;
+  color: var(--text-secondary);
 }
 
-.about-bio {
+.about-bio, .about-contact {
   margin-bottom: 1rem;
   white-space: pre-line;
 }
 
-.about-contact {
-  margin-bottom: 0.5rem;
-}
-
 .about-contact a {
   text-decoration: none;
-  color: lightgray;
+  color: var(--text-secondary);
 }
 
 p {
   text-align: center;
-  color: lightgray;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
   margin-left: 3em;
   margin-right: 3em;
@@ -226,7 +281,9 @@ p {
 
 /* Header */
 .header {
-  background-color: gray;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar {
@@ -234,36 +291,61 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  gap: 1em;
 }
 
 .nav-link {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.3s;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
 }
 
 .github-link {
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.3s;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
   text-decoration: none;
-  color: white;
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--card-bg);
+  transform: scale(1.1);
+}
+
+.nav-links button {
+  margin-left: 0.5em;
 }
 
 .header-name {
   font-family: 'Courgette', cursive;
-  color: lightgray;
+  color: var(--text-primary);
   font-size: 2em;
   margin: 0 1em;
   text-align: center;
   width: 100%;
-}
-
-.header-profile-img {
-  height: 15em;
-  width: 11em;
-  margin-right: 10px;
-  object-fit: cover;
-  vertical-align: middle;
-  margin: 0;
 }
 
 /* Footer */
@@ -274,26 +356,25 @@ p {
 }
 
 .footer-content {
-  font-size: 14px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1em
-}
-
-.footer-text {
-  flex-grow: 1; 
-  text-align: center; 
+  padding: 0 2em;
 }
 
 .back-to-top-button {
-  background-color: #007bff;
-  color: antiquewhite;
-  border: none;
-  padding: 5px 10px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--text-primary);
+  border-radius: 20px;
+  padding: 8px 16px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .back-to-top-button:hover {
-  background-color: #0056b3;
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
 }
