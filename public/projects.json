@@ -7,11 +7,11 @@
       "tech-stack": ""
     },
     {
-      "name": "Coming soon",
-      "about": "",
-      "live": "",
-      "git": "",
-      "tech-stack": ""
+      "name": "Captain Collector",
+      "about": "A place to digitally store your comic book collection",
+      "live": "https://captain-collector.onrender.com/",
+      "git": "https://github.com/jargray85/captain_collector",
+      "tech-stack": "EJS - Node.js - Express.js"
     },
     {
       "name": "Coming soon",
