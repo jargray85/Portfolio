@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import Projects from "./Projects"
+import ResumePreview from "./Resume-preview"
 
 
 
@@ -61,38 +62,7 @@ function Home() {
 
       <section id="resume">
         <h2>Resumé</h2>
-        <div className="resume-container">
-          <div 
-            className="resume-preview-wrapper"
-            onClick={() => {
-              console.log('Preview clicked');
-              document.getElementById('resume-modal').showModal();
-            }}
-          >
-            <div className="resume-preview">
-              <object 
-                data="/resume.pdf" 
-                type="application/pdf"
-                aria-label="Resume Preview"
-              >
-                <p>Click to view full resume</p>
-              </object>
-            </div>
-          </div>
-        </div>
-
-        <dialog id="resume-modal" className="resume-modal">
-          <object 
-            data="/resume.pdf" 
-            type="application/pdf"
-            className="resume-full"
-          >
-            <p>Unable to display PDF</p>
-          </object>
-          <button onClick={() => document.getElementById('resume-modal').close()} className="modal-close">
-            Close
-          </button>
-        </dialog>
+          <ResumePreview />
       </section>
     </div>
   )
