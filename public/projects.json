@@ -1,17 +1,17 @@
 [
     {
-      "name": "Coming soon",
-      "about": "",
-      "live": "",
-      "git": "",
-      "tech-stack": ""
+      "name": "Stockticker",
+      "about": "A basic stock app to track indexes, read news, and search for stock information.",
+      "live": "https://thestockticker.netlify.app/",
+      "git": "https://github.com/jargray85/StockTicker",
+      "tech-stack": "React - Node.js - Express.js"
     },
     {
       "name": "Captain Collector",
       "about": "A place to digitally store your comic book collection",
       "live": "https://captain-collector.onrender.com/",
       "git": "https://github.com/jargray85/captain_collector",
-      "tech-stack": "EJS - Node.js - Express.js"
+      "tech-stack": "EJS - Node.js - Express.js - MongoDB"
     },
     {
       "name": "Coming soon",
