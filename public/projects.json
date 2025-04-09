@@ -4,7 +4,7 @@
       "about": "A basic stock app to view indexes, read news, and search for stock information.",
       "live": "https://thestockticker.netlify.app/",
       "git": "https://github.com/jargray85/StockTicker",
-      "tech-stack": "React - Node.js - Express.js"
+      "tech-stack": "React - Node.js - JavaScript - CSS"
     },
     {
       "name": "Captain Collector",
