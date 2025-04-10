@@ -1,10 +1,10 @@
 [
     {
-      "name": "Stockticker",
-      "about": "A basic stock app to view indexes, read news, and search for stock information.",
-      "live": "https://thestockticker.netlify.app/",
-      "git": "https://github.com/jargray85/StockTicker",
-      "tech-stack": "React - Node.js - JavaScript - CSS"
+      "name": "Coming soon",
+      "about": "",
+      "live": null,
+      "git": null,
+      "tech-stack": ""
     },
     {
       "name": "Captain Collector",
@@ -16,8 +16,8 @@
     {
       "name": "Coming soon",
       "about": "",
-      "live": "",
-      "git": "",
+      "live": null,
+      "git": null,
       "tech-stack": ""
     }
 ]
