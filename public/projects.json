@@ -1,7 +1,7 @@
 [
     {
       "name": "Captain Collector",
-      "about": "A place to digitally store your comic book collection.",
+      "about": "A website where you can digitally store your comic book collection.",
       "live": "https://captain-collector.onrender.com/",
       "github": "https://github.com/jargray85/captain_collector",
       "tech-stack": "EJS - Node.js - Express.js - MongoDB"
@@ -18,6 +18,6 @@
       "about": "A stock app that shows live index prices, news, and a stock search feature.",
       "live": "https://thestockticker.netlify.app/",
       "github": "https://github.com/jargray85/StockTicker",
-      "tech-stack": "React - Node.js - Express.js - JavaScript - CSS"
+      "tech-stack": "React.js - Node.js - Express.js"
     }
 ]
