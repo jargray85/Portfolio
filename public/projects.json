@@ -1,23 +1,23 @@
 [
     {
-      "name": "Coming soon",
-      "about": "",
-      "live": null,
-      "git": null,
-      "tech-stack": ""
-    },
-    {
       "name": "Captain Collector",
       "about": "A place to digitally store your comic book collection.",
       "live": "https://captain-collector.onrender.com/",
-      "git": "https://github.com/jargray85/captain_collector",
+      "github": "https://github.com/jargray85/captain_collector",
       "tech-stack": "EJS - Node.js - Express.js - MongoDB"
     },
     {
       "name": "Coming soon",
       "about": "",
       "live": null,
-      "git": null,
+      "github": null,
       "tech-stack": ""
+    },
+    {
+      "name": "Stockticker",
+      "about": "A stock app that shows live index prices, news, and a stock search feature.",
+      "live": "https://thestockticker.netlify.app/",
+      "github": "https://github.com/jargray85/StockTicker",
+      "tech-stack": "React - Node.js - Express.js - JavaScript - CSS"
     }
 ]
