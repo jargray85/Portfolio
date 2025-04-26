@@ -7,11 +7,11 @@
       "tech-stack": "EJS - Node.js - Express.js - MongoDB"
     },
     {
-      "name": "Coming soon",
-      "about": "",
-      "live": null,
-      "github": null,
-      "tech-stack": ""
+      "name": "Translator App",
+      "about": "A translator app that uses OpenAI's API to translate text.",
+      "live": "https://translatorgpt.netlify.app/",
+      "github": "https://github.com/jargray85/translator-app",
+      "tech-stack": "React.ts - Node.js - Express.js - OpenAI API"
     },
     {
       "name": "Stockticker",
