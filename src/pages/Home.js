@@ -51,6 +51,7 @@ function Home() {
 
       <section id="projects">
       <h2>Projects</h2>
+      <h4><i>The backends of these projects are deployed on Render (free tier), and require about 10 - 30 secounds to spin up.</i></h4>
       <div className="projects-container-wrapper">
         <div className="projects-container">
           <Projects />
